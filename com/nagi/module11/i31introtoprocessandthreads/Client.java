@@ -1,4 +1,4 @@
-package com.nagi.module11.IntroToProcessAndThreads131;
+package com.nagi.module11.i31introtoprocessandthreads;
 
 public class Client {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Client {
         Student student = new Student();
         student.printName();
         student.printNameFancy();
-        student.printUniNameStatic();
+        // student.printUniNameStatic(); // NOTE : UNCOMMENT IT
         Student.printUniNameStatic();
         student.printUnitNameFancy();
     }
@@ -44,7 +44,7 @@ class Student{
 
     public void printUnitNameFancy(){
         System.out.print("Insdie instance method calling static mehtod : ");
-        this.printUniNameStatic(); // able to access static method in instance methd with warning
+        // this.printUniNameStatic(); // NOTE : UNCOMMENT IT , able to access static method in instance methd with warning
         System.out.println();
     }
 
