@@ -11,7 +11,8 @@ public class Client {
          */
         BasicThread basicThread = new BasicThread();
         Thread thread = new Thread(basicThread);
-        thread.start();
+        thread.run(); // same thread of main is used
+        thread.start(); //  new thread is created
 
         System.out.println("I'm running on thread "+Thread.currentThread().getName());
 
