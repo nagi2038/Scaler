@@ -24,6 +24,11 @@ public class Client {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        /*
+         * NOTE : if thread never complete the task it will not release it resource 
+         * or give chance to other thread to perform
+         * So, give correct size of ThreadPolling
+         */
         for (Future<Integer> future : farray) {
             // calling get method on future object
             try {   
@@ -31,6 +36,7 @@ public class Client {
                 int val = future.get();  
                 System.out.println("Returned value : " + val);           
             } catch (Exception e) {
+                // you can handle file condition here.
                 System.out.println("Error in Code");
             } 
         }
