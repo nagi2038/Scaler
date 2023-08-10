@@ -15,7 +15,7 @@ public class Client {
          */
 
          /* 
-         TODO uncommetn below code and try out
+          uncommetn below code and try out
         for(int i = 0 ; i<20; i++){
             NumberPrinter numberPrinter = new NumberPrinter(i);
             Thread thread = new Thread(numberPrinter);
@@ -23,7 +23,8 @@ public class Client {
         }
         */
 
-        ExecutorService service =  Executors.newFixedThreadPool(8);
+        ExecutorService service =  Executors.newFixedThreadPool(5);
+        // can we create object of Executors? NO => construtor is private. but, we can call static method of that class.
         
         for(int i = 0 ; i<20; i++){
             NumberPrinter numberPrinter = new NumberPrinter(i);
@@ -31,13 +32,13 @@ public class Client {
             /*
              * NOTE:
              * even if increase no of requests [iteration]
-             * there only threads that going to be used
              * here thread reuse is happing which consume less resoureces
              * 
              * and OUTPUT is not in order 1,2,3..
              * because thread are scheduled as per OS
              */
         }
+        service.shutdown(); // YOU need to shut down the service to end the program
     }
     
 }
