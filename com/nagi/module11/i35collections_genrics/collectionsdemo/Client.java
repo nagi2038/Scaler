@@ -1,4 +1,4 @@
-package com.nagi.module11.i35collectionsandgenrics.collectionsdemo;
+package com.nagi.module11.i35collections_genrics.collectionsdemo;
 
 import java.util.ArrayList;
 import java.util.Arrays;

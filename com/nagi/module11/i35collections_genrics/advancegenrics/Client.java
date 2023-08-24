@@ -1,4 +1,4 @@
-package com.nagi.module11.i35collectionsandgenrics.advancegenrics;
+package com.nagi.module11.i35collections_genrics.advancegenrics;
 
 public class Client {
     public static void main(String[] args) {

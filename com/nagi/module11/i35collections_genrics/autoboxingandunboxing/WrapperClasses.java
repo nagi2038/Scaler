@@ -1,4 +1,4 @@
-package com.nagi.module11.i35collectionsandgenrics.autoboxingandunboxing;
+package com.nagi.module11.i35collections_genrics.autoboxingandunboxing;
 
 public class WrapperClasses {
 

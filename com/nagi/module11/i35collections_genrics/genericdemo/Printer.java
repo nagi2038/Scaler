@@ -1,4 +1,4 @@
-package com.nagi.module11.i35collectionsandgenrics.genericdemo;
+package com.nagi.module11.i35collections_genrics.genericdemo;
 
 public class Printer<T> {
 
