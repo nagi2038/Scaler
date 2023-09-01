@@ -50,9 +50,15 @@ public class TicTacToe { // mimicks our frontend
             System.out.println(player.getName() + "'s trun, give row and col");
             int row = scanner.nextInt();
             int col = scanner.nextInt();
-            boolean iswon = gameController.makeMove(player , row, col);
-            if (iswon){
-                System.out.printf("\n\n********Hurray %s has won the game **********\n\n\n", player.getName());
+            GameStatus gameStatus = gameController.makeMove(player , row, col);
+            if (gameStatus == GameStatus.ENDED){
+                System.out.printf("\n\n******** Hurray %s has won the game **********\n\n\n", player.getName());
+                gameController.displayBoard();
+                System.out.println("\n\n**************** Happy Gaming ***************\n\n");
+            }
+
+            if (gameStatus == GameStatus.DRAW){
+                System.out.printf("\n\n******** Game Draw **********\n\n\n", player.getName());
                 gameController.displayBoard();
                 System.out.println("\n\n**************** Happy Gaming ***************\n\n");
             }

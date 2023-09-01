@@ -21,7 +21,7 @@ public class GameController {
         return game;
     }
 
-    public boolean makeMove(Player player, int row , int col){
+    public GameStatus makeMove(Player player, int row , int col){
         return game.makeMove(player , row , col);
 
     }

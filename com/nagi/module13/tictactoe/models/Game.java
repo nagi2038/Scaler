@@ -103,27 +103,40 @@ public class Game{
 
     }
 
-    public boolean makeMove(Player player, int row, int col) {
+    public GameStatus makeMove(Player player, int row, int col) {
         Cell cell = this.board.setPlayer(player , row , col);
         Move move = new Move(player , cell);
         this.moves.add(move);
         // System.out.printf("%d player \n" , this.currentPlayer);
         this.currentPlayer = (this.currentPlayer + 1)%(this.board.getDimension()-1);
         // System.out.println("current Player index : "+this.currentPlayer);
-        return this.iswon(move);
+        if (this.iswon(move)){
+            return GameStatus.ENDED;
+        }
+        else if(this.isdraw()){
+            return GameStatus.DRAW;
+        }
+        return GameStatus.IN_PROGRESS;
 
     }
 
     private  boolean iswon(Move move){
-
-        for (WinningStrategy winningStrategy : strategies) {
-            if(winningStrategy.checkIfWon(board, move)){
-                this.gameStatus = GameStatus.ENDED;
-                return true;
-            }
-            
+        boolean won = board.iswon(this.board , move);
+        if (won){
+            this.gameStatus = GameStatus.ENDED;  
         }
-        return false;
+        return won;
+        
+
+    }
+
+    private boolean isdraw(){
+
+        boolean draw =  board.isdraw();
+        if (draw){
+            this.gameStatus = GameStatus.DRAW;
+        }
+        return draw;
 
     }
 }
