@@ -9,5 +9,14 @@ public class Player {
         this.name = name;
         this.symbol = symbol;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Character getSymbol() {
+        return symbol;
+    }
+    
     
 }

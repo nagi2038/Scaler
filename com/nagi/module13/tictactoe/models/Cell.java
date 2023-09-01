@@ -14,4 +14,29 @@ public class Cell {
         this.player = null; // explicit 
     }
 
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public CellState getCellstate() {
+        return cellstate;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public void setCellstate(CellState cellstate) {
+        this.cellstate = cellstate;
+    }
+    
+
 }
