@@ -38,5 +38,8 @@ public class Cell {
         this.cellstate = cellstate;
     }
     
-
+    public void removePlayer(){
+        player = null;
+         cellstate = CellState.EMPTY;
+    }
 }

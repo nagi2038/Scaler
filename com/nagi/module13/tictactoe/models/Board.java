@@ -92,5 +92,13 @@ public class Board {
         }
         return false;
     }
+
+    public void emptyCells(){
+        for (List<Cell> row : cells) {
+            for (Cell cell : row) {
+                cell.removePlayer();
+            }
+        }
+    }
     
 }

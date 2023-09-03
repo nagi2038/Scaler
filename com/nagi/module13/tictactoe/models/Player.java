@@ -1,5 +1,7 @@
 package com.nagi.module13.tictactoe.models;
 
+import java.util.Scanner;
+
 public class Player {
 
     protected String name;
@@ -18,5 +20,16 @@ public class Player {
         return symbol;
     }
     
+    public Move makeMove(Board board ){
+        // Input row and col from user on board
+        // validation we can make move or not.
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(getName() + "'s trun, give row and col");
+        int row = scanner.nextInt();
+        int col = scanner.nextInt();
+        Cell cell = board.setPlayer(this, row, col);
+        Move move = new Move(this,cell);
+        return move;
+    }
     
 }

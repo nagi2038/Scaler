@@ -21,18 +21,19 @@ public class GameController {
         return game;
     }
 
-    public GameStatus makeMove(Player player, int row , int col){
-        return game.makeMove(player , row , col);
+    public GameStatus makeMove(){
+        return game.makeMove();
 
+    }
+
+    public void rewatch(){
+        game.rewatch();
     }
 
     public GameStatus getGameStatus(){
         return game.getGameStatus();
     }
 
-    public void undo(){
-
-    }
 
     public void displayBoard(){
 

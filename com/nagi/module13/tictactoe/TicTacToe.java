@@ -44,27 +44,41 @@ public class TicTacToe { // mimicks our frontend
             System.out.println(e.getMessage());
             return;
         }
+        Player player = null;
+        GameStatus gameStatus = null;
         while(gameController.getGameStatus().equals(GameStatus.IN_PROGRESS)){
             gameController.displayBoard();
-            Player player = gameController.getCurrentPlayer();
-            System.out.println(player.getName() + "'s trun, give row and col");
-            int row = scanner.nextInt();
-            int col = scanner.nextInt();
-            GameStatus gameStatus = gameController.makeMove(player , row, col);
-            if (gameStatus == GameStatus.ENDED){
-                System.out.printf("\n\n******** Hurray %s has won the game **********\n\n\n", player.getName());
-                gameController.displayBoard();
-                System.out.println("\n\n**************** Happy Gaming ***************\n\n");
-            }
-
-            if (gameStatus == GameStatus.DRAW){
-                System.out.printf("\n\n******** Game Draw **********\n\n\n", player.getName());
-                gameController.displayBoard();
-                System.out.println("\n\n**************** Happy Gaming ***************\n\n");
-            }
-
+            player = gameController.getCurrentPlayer();
+            gameStatus = gameController.makeMove();
 
         }
+        if (gameStatus == GameStatus.ENDED){
+            System.out.printf("\n\n******** Hurray %s has won the game **********\n\n\n", player.getName());
+            gameController.displayBoard();
+            System.out.println("\n\n**************** Happy Gaming ***************\n\n");
+        }
+
+        if (gameStatus == GameStatus.DRAW){
+            System.out.printf("\n\n******** Game Draw **********\n\n\n", player.getName());
+            gameController.displayBoard();
+            System.out.println("\n\n**************** Happy Gaming ***************\n\n");
+        }
+
+        System.out.println("Do you want rewatch feature ? (y/n)");
+        char rewatch = scanner.next().toLowerCase().charAt(0);
+        if (rewatch == 'y'){
+
+
+            System.out.println("Rewatch the game \n\n !!");
+            gameController.rewatch();
+            
+
+
+            
+        }
+        else
+        System.out.println("Not intrested in rewatch");
     }
+    
     
 }
