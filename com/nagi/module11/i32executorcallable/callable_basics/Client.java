@@ -17,7 +17,7 @@ public class Client {
             System.out.println("Recived " + num + " From Thread Pool");
             System.out.println("Recived " + num2 + " From Thread Pool");
         } catch (Exception e) {
-            System.out.println("Error in getting nuber");
+            System.out.println("Error in getting number");
         }
         service.shutdown();
     }
