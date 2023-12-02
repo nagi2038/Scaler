@@ -7,7 +7,7 @@ public class Client {
         
         Student std = null , std2= null;
         try {
-            std = Student.getBuilder().setAge(12)
+            std = Student.getBuilder().setAge(23)
                                 .setEmail("nagi2038@gmail.com")
                                 .setMarks(45)
                                 .setUniveristy("codenetra")

@@ -21,8 +21,33 @@ public class Student {
         return new Builder();
     }
 
+    
 
-     static class Builder{
+
+     public String getName() {
+        return name;
+    }
+
+    public String getUniveristy() {
+        return univeristy;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+
+
+
+
+    static class Builder{
 
         private String name , univeristy, email;
         private int age;

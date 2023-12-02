@@ -1,7 +1,7 @@
 package com.nagi.module12.designpatterns.creational.singleton.singletondcl;
 
 public class SingletonDCL {
-    private static SingletonDCL singletondcl;
+    private volatile static SingletonDCL singletondcl;
 
     private SingletonDCL(){};
 
